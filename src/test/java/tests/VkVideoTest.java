@@ -19,17 +19,21 @@ public class VkVideoTest extends BaseTest {
         welcome.closeGooglePopupIfPresent();
         welcome.skipAuth();
 
-        Thread.sleep(2000);
+        Thread.sleep(2000); // ждем чуть дольше
 
         feed.openFirstVideo();
 
-        Thread.sleep(8000);
+        Thread.sleep(10000); // ждем, пока видео загрузится
 
         boolean isPlaying = player.isVideoPlaying();
 
-        assertTrue(isPlaying,
-                "Видео стоит на месте или отображается статичный кадр!");
+        if (isPlaying) {
+            System.out.println("Видео успешно воспроизводится");
+        } else {
+            System.out.println("Видео не воспроизводится");
+        }
 
-        System.out.println("Тест пройден: Видео успешно запущено.");
+        assertTrue(isPlaying,
+                "Видео стоит на месте или отображается статичный кадр");
     }
 }
