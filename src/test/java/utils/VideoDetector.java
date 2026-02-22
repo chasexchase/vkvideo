@@ -8,7 +8,15 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 
 public class VideoDetector {
-
+    /**
+     * проверяет факт воспроизведения видео по изменению изображения на экране
+     * делает два последовательных скриншота и сравнивает центральную область,
+     * исключая статичные элементы интерфейса.
+     *
+     * @param driver активный AndroidDriver
+     * @return true если обнаружено изменение изображения выше порогового значения
+     * @throws Exception если не удалось получить или обработать скриншоты
+     */
     public static boolean isVideoPlaying(AndroidDriver driver) throws Exception {
 
         byte[] screen1 = driver.getScreenshotAs(OutputType.BYTES);

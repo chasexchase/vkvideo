@@ -25,12 +25,12 @@ public abstract class BaseTest {
 
         driver.pressKey(new KeyEvent(AndroidKey.HOME));
         driver.activateApp("com.vk.vkvideo");
-        System.out.println("Запуск теста: openApp");
+        System.out.println("Запуск теста");
     }
 
     @AfterEach
     public void tearDown() {
-        System.out.println("Очищаем список недавних приложений");
+        //System.out.println("Очищаем список недавних приложений");
 
         try {
             driver.pressKey(new KeyEvent(AndroidKey.APP_SWITCH));

@@ -14,20 +14,20 @@ public class WelcomeScreen extends BaseScreen {
         super(driver, wait);
     }
 
-    public void closeGooglePopupIfPresent() {
+    public void closeGooglePopup() {
         // Закрываем окно Google
         try {
-            System.out.println("Ожидаем окно Google...");
+            //System.out.println("Ожидаем окно Google...");
             wait.until(ExpectedConditions.visibilityOfElementLocated(googleCancel));
-            System.out.println("Окно появилось, ждем 5 секунд перед кликом...");
+            //System.out.println("Окно появилось, ждем 5 секунд перед кликом...");
             Thread.sleep(5000);
             wait.until(ExpectedConditions.elementToBeClickable(googleCancel)).click();
-            System.out.println("Закрыли окно Google");
+            //System.out.println("Закрыли окно Google");
         } catch (Exception ignored) {}
     }
 
-    public void skipAuth() {
+    public void skipVKAuth() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(skipAuth)).click();
-        System.out.println("Скипнули авторизацию ВК");
+        //System.out.println("Скипнули авторизацию ВК");
     }
 }

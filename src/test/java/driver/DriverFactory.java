@@ -17,6 +17,6 @@ public class DriverFactory {
         caps.setCapability("appPackage", "com.vk.vkvideo");
         caps.setCapability("noReset", true);
 
-        return new AndroidDriver(new URL("http://127.0.0.1:4724"), caps);
+        return new AndroidDriver(new URL("http://127.0.0.1:4723"), caps);
     }
 }

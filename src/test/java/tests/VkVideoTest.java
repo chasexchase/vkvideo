@@ -16,10 +16,8 @@ public class VkVideoTest extends BaseTest {
         FeedScreen feed = new FeedScreen(driver, wait);
         PlayerScreen player = new PlayerScreen(driver, wait);
 
-        welcome.closeGooglePopupIfPresent();
-        welcome.skipAuth();
-
-        Thread.sleep(2000); // ждем чуть дольше
+        welcome.closeGooglePopup();
+        welcome.skipVKAuth();
 
         feed.openFirstVideo();
 
